@@ -1,0 +1,57 @@
+# Kasumi Extras
+
+The mother repo that holds all of the "plugins" Kasumi uses together to
+modify your ROM! (Yes, you heard that right, "modify **your** ROM"!)
+
+# How to make use of this repo?
+
+To make use of this repo, you have to make sure your target ROM
+includes `vendor/extra/product.mk` (you most probably don't have to do
+this if the ROM uses build system modifications made by LineageOS), and
+clone this repository with the rest of the source for better integrity.
+
+Seek for the following line in the common config files located in
+`vendor/rom/config` to see if it includes `vendor/extra/config.mk`
+(You'll most probably be looking into `common.mk` first, it should be
+at the top of it);
+```makefile
+# Allow vendor/extra to override any property by setting it first
+$(call inherit-product-if-exists, vendor/extra/product.mk)
+```
+
+The comment above it might change depending on the developer's
+preference but the code underneath it MUST be that!
+
+You might as well have to patch the ROM sources for full compatibility
+if the ROM doesn't welcome modifications to, say for example, its
+identity components using vendor/extra. There are some example patches
+in the "example_patches" folder so you can check them if you want some
+insight on what's waiting for you. More patches might be added in there
+if you open a PR with your own `.patch` files generated using
+`git-format-patch`. You have to place your patch file in a subpath that
+would point to the path of the repo you patched (E.g.
+`example_patches/vendor/pb` for `vendor/pb` of PixelBuilds)
+
+# Credits
+
+- windowz414/stelbl for the base code and research
+- YOU for submitting some example patches maybe?
+
+-----
+
+```
+#
+# Kasumi Extras - Mother repo for all extras for Kasumi
+# Copyright (C) 2024 Project Kasumi
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+```
