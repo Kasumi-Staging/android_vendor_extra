@@ -11,7 +11,7 @@ this if the ROM uses build system modifications made by LineageOS), and
 clone this repository with the rest of the source for better integrity.
 
 Seek for the following line in the common config files located in
-`vendor/rom/config` to see if it includes `vendor/extra/config.mk`
+`vendor/rom/config` to see if it includes `vendor/extra/product.mk`
 (You'll most probably be looking into `common.mk` first, it should be
 at the top of it);
 ```makefile
