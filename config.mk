@@ -31,13 +31,11 @@
 # overlays located in vendor/kasumi/overlay. Good luck, have fun and
 # send patches!
 
-LOCAL_PATH := $(call my-dir)
-
 # Set the product brand to Kasumi
 PRODUCT_BRAND ?= Kasumi
 
 # Versioning stuff
-include $(LOCAL_PATH)/version.mk
+include vendor/extra/version.mk
 
 # Include Kasumi Tones
 -include vendor/kasumi/tones/config.mk
