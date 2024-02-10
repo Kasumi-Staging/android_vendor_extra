@@ -37,6 +37,9 @@ PRODUCT_BRAND ?= Kasumi
 # Versioning stuff
 include vendor/extra/version.mk
 
+# Include the boot animation
+-include vendor/extra/bootanimation.mk
+
 # Include Kasumi Tones
 -include vendor/kasumi/tones/config.mk
 
