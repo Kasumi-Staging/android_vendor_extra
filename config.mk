@@ -61,6 +61,10 @@ else
     PRODUCT_PACKAGES += BandoriWallpapersStub
 endif
 
+# Include the fixup props. These props aim to improve the UX (such as
+# fix the lags and such).
+-include vendor/extra/fixup_props.mk
+
 # And lastly, include our overlays! You'll most probably have to adapt
 # the names of the strings in them for them to work fine!
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
